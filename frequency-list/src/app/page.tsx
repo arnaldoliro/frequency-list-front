@@ -1,9 +1,9 @@
-import Image from "next/image";
+import MainHeader from "@/components/MainHeader";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Front is Running!</h1>
+    <div className="mt-10">
+      <MainHeader />
     </div>
   );
 }

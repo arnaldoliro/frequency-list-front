@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import NavBar from "@/components/NavBar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,9 +13,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body style={{ maxWidth: '85vw', margin: '0 auto' }}>
-        {children}
+    <html lang="pt-br">
+      <body className="bg-[#eee]">
+        <header>
+          <NavBar />
+        </header>
+        <main style={{ maxWidth: '85vw', margin: '0 auto'}}>
+          {children}
+        </main>
       </body>
     </html>
   );
