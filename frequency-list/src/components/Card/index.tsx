@@ -7,7 +7,7 @@ type CardProps = {
 
 export default async function Card({ nome, data, hora, organizado }: CardProps) {
     return(
-        <div className="bg-[#fff] w-75 h-auto mt-5 rounded-md p-2 hover:shadow-lg transition-all duration-300 hover:scale-107">
+        <div className="bg-[#fff] w-75 h-auto mt-3 rounded-md p-2 hover:shadow-lg transition-all duration-300 hover:scale-107">
             <h1 className="text-lg font-semibold">{nome}</h1>
             <h1>Data: {data}</h1>
             <h1>Horário: {hora}</h1>

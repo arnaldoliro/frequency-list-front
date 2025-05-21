@@ -1,11 +1,11 @@
 import MainHeader from "@/components/MainHeader";
-import Card from "@/components/Card";
+import CardList from "@/components/CardList";
 
 export default function Home() {
   return (
     <div className="mt-10">
       <MainHeader />
-      <Card />
+      <CardList />
     </div>
   );
 }
