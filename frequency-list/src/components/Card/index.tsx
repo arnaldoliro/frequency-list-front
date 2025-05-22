@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Modal from "../Modal";
+import Warning from "../Warning";
 
 type CardProps = {
   nome: string;
@@ -14,7 +15,7 @@ type CardProps = {
 
 export default function Card({ nome, data, hora, organizado, status, local }: CardProps) {
     const [isOpen, setIsOpen] = useState(false);
-    
+    const [showWarning, setShowWarning] = useState(true);
 
     return(
         <>
@@ -34,8 +35,14 @@ export default function Card({ nome, data, hora, organizado, status, local }: Ca
             </div>
             <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
                 <div className="py-4 px-6">
-                    <h1>{nome}</h1>
-                    <p>Mais detalhes do evento...</p>
+                    <h1>Informações sobre o evento</h1>
+                    <h1>Evento {nome}</h1>
+                    <h1>Gerencia: STP</h1>
+                    <h1>Local: {local}</h1>
+                    <h1>Setor: Unidades Assistenciais</h1>
+                    <h1>Data: {data}</h1>
+                    <h1>Carga Horária: 3,0</h1>
+                    {showWarning && <Warning onClose={() => setShowWarning(false)} />}
                 </div>
             </Modal>
         </>
