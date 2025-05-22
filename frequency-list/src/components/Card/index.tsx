@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Modal from "../Modal";
 import Warning from "../Warning";
+import FrequencyList from "../FrequencyList";
 
 type CardProps = {
   nome: string;
@@ -44,6 +45,7 @@ export default function Card({ nome, data, hora, organizado, status, local }: Ca
                     <h1>Carga Horária: 3,0</h1>
                     {showWarning && <Warning onClose={() => setShowWarning(false)} />}
                 </div>
+                <FrequencyList />
             </Modal>
         </>
     )
