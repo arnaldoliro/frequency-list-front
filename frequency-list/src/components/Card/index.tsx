@@ -1,9 +1,14 @@
 "use client";
 
+import { MdManageHistory } from "react-icons/md";
 import { useState } from "react";
 import Modal from "../Modal";
 import Warning from "../Warning";
 import FrequencyList from "../FrequencyList";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaCalendarAlt } from "react-icons/fa";
+import { IoIosTime } from "react-icons/io";
+import { RiUserCommunityFill } from "react-icons/ri";
 
 type CardProps = {
   nome: string;
@@ -35,16 +40,32 @@ export default function Card({ nome, data, hora, organizado, status, local }: Ca
                 <button className="mt-3 bg-blue-300 cursor-pointer rounded-md px-1 text-sm hover:shadow-md hover:bg-blue-400 transition-all duration-300 hover:scale-107">Acessar</button>
             </div>
             <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-                <div className="py-4 px-6">
-                    <h1>Informações sobre o evento</h1>
-                    <h1>Evento {nome}</h1>
-                    <h1>Gerencia: STP</h1>
-                    <h1>Local: {local}</h1>
-                    <h1>Setor: Unidades Assistenciais</h1>
-                    <h1>Data: {data}</h1>
-                    <h1>Carga Horária: 3,0</h1>
-                    {showWarning && <Warning onClose={() => setShowWarning(false)} />}
+                <div className="my-4 mx-6 p-2 rounded-lg shadow-lg bg-blue-50">
+                    <h1 className="text-xl font-semibold">Informações sobre o evento</h1>
+                    <ul className="flex gap-10 mt-4">
+                        <li className="flex items-center gap-1">
+                            <MdManageHistory/>
+                            <h1 className="">Gerencia: STP</h1>
+                        </li>
+                        <li className="flex items-center gap-1">
+                            <FaLocationDot />
+                            <h1>Local: {local}</h1>
+                        </li>
+                        <li className="flex items-center gap-1">
+                            <RiUserCommunityFill />
+                            <h1>Setor: Unidades Assistenciais</h1>
+                        </li>
+                        <li className="flex items-center gap-1">
+                            <FaCalendarAlt />
+                            <h1>Data: {data}</h1>
+                        </li>
+                        <li className="flex items-center gap-1">
+                            <IoIosTime />
+                            <h1>Carga Horária: 3,0</h1>
+                        </li>
+                    </ul>
                 </div>
+                    {showWarning && <Warning onClose={() => setShowWarning(false)} />}
                 <FrequencyList />
             </Modal>
         </>

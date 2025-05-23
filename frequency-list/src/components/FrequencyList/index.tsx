@@ -21,7 +21,7 @@ export default function FrequencyList() {
                     <h1 className="">{pessoa.cargo}</h1>
                     <h1 className="">{pessoa.setor}</h1>
                     <h1 className="">{pessoa.matricula}</h1>
-                    <h1 className={`rounded-lg w-max px-1 shadow-md ${(pessoa.status === 'Presente') ? 'bg-green-400' : 'bg-red-400'}`}>{pessoa.status}</h1>
+                    <h1 className={`rounded-lg text-xs flex items-center w-max px-1 shadow-md ${(pessoa.status === 'Presente') ? 'bg-green-400' : 'bg-red-400'}`}>{pessoa.status}</h1>
                 </div>
             ))}
         </div>
