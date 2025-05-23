@@ -16,12 +16,12 @@ export default function FrequencyList() {
                 <h1 className="">Status</h1>
             </div>
             {pessoas.map((pessoa, index) => (
-                <div key={index} className={`grid grid-cols-[2fr_1fr_1fr_0.5fr_0.5fr] gap-4 p-2 border-b border-[#ccc] transition ${index % 2 === 0 ? 'bg-[#fff]' : 'bg-[#eee]'}`}>
-                    <h1 className="text-sm">{pessoa.nome}</h1>
-                    <h1 className="text-sm">{pessoa.cargo}</h1>
-                    <h1 className="text-sm">{pessoa.setor}</h1>
-                    <h1 className="text-sm">{pessoa.matricula}</h1>
-                    <h1 className="text-sm ">{pessoa.status}</h1>
+                <div key={index} className={`text-sm grid grid-cols-[2fr_1fr_1fr_0.5fr_0.5fr] gap-4 p-2 border-b border-[#ccc] transition ${index % 2 === 0 ? 'bg-[#fff]' : 'bg-[#eee]'}`}>
+                    <h1 className="">{pessoa.nome}</h1>
+                    <h1 className="">{pessoa.cargo}</h1>
+                    <h1 className="">{pessoa.setor}</h1>
+                    <h1 className="">{pessoa.matricula}</h1>
+                    <h1 className={`rounded-lg w-max px-1 shadow-md ${(pessoa.status === 'Presente') ? 'bg-green-400' : 'bg-red-400'}`}>{pessoa.status}</h1>
                 </div>
             ))}
         </div>
